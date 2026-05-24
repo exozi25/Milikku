@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨Untuk Kamu cinta✨</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- ✅ FONT: KEREN, TEGAS, MUDAH DIBACA ✅ -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emas: '#FFD700',       // Emas Mewah
+                        biru: '#1E90FF',        // Biru Langit
+                        mawar: '#FF1493',       // Merah Muda Cinta
+                        lembut: '#FFF8DC',      // Krem Lembut
+                        gelap: '#4B0082',       // Ungu Tua Elegan
+                        abu: '#708090',         // Abu Lembut
+                    },
+                    fontFamily: {
+                        utama: ['Nunito Sans', 'sans-serif'],   // Tulisan Utama: Lembut & Jelas
+                        tegas: ['Montserrat', 'sans-serif'],    // Tulisan Judul: Keren, Modis & Mudah Dibaca
+                    },
+                    boxShadow: {
+                        'berkilau': '0 0 25px rgba(255, 215, 0, 0.6)',
+                        'romantis': '0 0 15px rgba(30, 144, 255, 0.4), 0 0 30px rgba(255, 20, 147, 0.2)',
+                        'bingkai-foto': '0 0 0 4px #FFD700, 0 0 0 8px #1E90FF, 0 0 0 12px #FF1493, 0 0 20px rgba(0,0,0,0.2)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .animasi-melayang { animation: melayang 3s ease-in-out infinite; }
+            .animasi-denyut { animation: denyut 2s ease-in-out infinite; }
+            .animasi-muncul { animation: muncul 1s ease-out forwards; }
+            .animasi-goyang { animation: goyang 2s ease-in-out infinite alternate; }       /* Goyang Foto */
+            .animasi-goyang-cepat { animation: goyang 1.2s ease-in-out infinite alternate; }/* Goyang Tombol */
+            .tombol-tekan { transition: all 0.2s ease; }
+            .tombol-tekan:active { transform: scale(0.95); }
+            .bingkai-kaca { backdrop-filter: blur(8px); background: rgba(255, 255, 255, 0.15); border: 2px solid rgba(255, 255, 255, 0.3); }
+            .bayangan-teks { text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+            .garis-teks { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
+        }
+        @keyframes melayang { 0% { transform: translateY(0); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0); } }
+        @keyframes denyut { 0% { transform: scale(1); } 50% { transform: scale(1.08); } 100% { transform: scale(1); } }
+        @keyframes muncul { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
+        @keyframes jatuh { 0% { transform: translateY(-10vh) rotate(0deg); opacity:1; } 100% { transform: translateY(100vh) rotate(360deg); opacity:0; } }
+        @keyframes goyang { 0% { transform: rotate(-2deg); } 50% { transform: rotate(2deg); } 100% { transform: rotate(-2deg); } }
+    </style>
+</head>
+<body class="bg-cover bg-center bg-fixed min-h-screen flex items-center justify-center p-4 font-utama" style="background-image: url('https://img.freepik.com/free-vector/watercolor-roses-background_52683-76397.jpg');">
+
+    <div class="fixed inset-0 bg-gradient-to-br from-emas/20 via-biru/20 to-mawar/20 backdrop-brightness-75 -z-10"></div>
+
+    <!-- Hiasan Latar -->
+    <div class="fixed top-0 left-0 w-full h-full pointer-events-none z-0">
+        <div class="absolute top-10 right-10 text-lembut/60 text-6xl animasi-melayang">✨</div>
+        <div class="absolute top-1/4 left-1/6 text-emas/50 text-4xl animasi-melayang" style="animation-delay: 0.2s;">❤️</div>
+        <div class="absolute bottom-1/3 right-1/5 text-mawar/40 text-5xl animasi-melayang" style="animation-delay: 0.4s;">🌹</div>
+        <div class="absolute top-2/3 left-1/5 text-biru/40 text-4xl animasi-melayang" style="animation-delay: 0.6s;">✉️</div>
+    </div>
+
+    <!-- Kartu Utama -->
+    <div class="relative z-10 w-full max-w-md" id="kartuUtama">
+        <div class="bingkai-kaca rounded-[2rem] shadow-romantis p-6 border-4 border-dashed border-emas/60 animasi-muncul">
+            
+            <!-- Logo Hati -->
+            <div class="flex justify-center mb-6">
+                <div class="w-28 h-28 rounded-full bg-gradient-to-tr from-emas to-mawar flex items-center justify-center shadow-berkilau animasi-denyut overflow-hidden border-4 border-white">
+                    <span class="text-white text-6xl">❤️</span>
+                </div>
+            </div>
+
+            <!-- 🟦 KOTAK FOTO: PERSEGI / KOTAK PAS + GOYANG 🟦 -->
+            <div class="mb-6 flex justify-center">
+                <div class="animasi-goyang">
+                    <div class="w-[240px] h-[240px] rounded-2xl overflow-hidden shadow-bingkai-foto relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-emas/30 via-biru/30 to-mawar/30"></div>
+                        <img src="https://i.ibb.co.com/JWxK4txn/1779592488037.jpg" alt="Foto">
+                        <div class="absolute top-2 left-2 text-white">✨</div>
+                        <div class="absolute bottom-2 right-2 text-white">❤️</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ✅ TULISAN: KEREN, TEGAS & MUDAH DIBACA ✅ -->
+            <h1 class="font-tegas font-bold text-[clamp(2.2rem,4vw,2.8rem)] text-center text-white mb-4 bayangan-teks tracking-wider">
+                ❤️UNTUK KAMU LUTFFIA NISAA❤️
+            </h1>
+
+            <div class="text-center mb-8 space-y-5 px-3">
+                <p class="font-utama font-semibold text-lembut text-[1.2rem] leading-relaxed bayangan-teks">
+                    "Sejak pertama kali kita bertemu,<br>
+                    Ada rasa indah yang tumbuh di dada.<br>
+                    Kamu bawa cahaya dalam hidupku,<br>
+                    Menjadi alasan aku tersenyum setiap hari."
+                </p>
+
+                <p class="font-utama font-normal text-white text-lg leading-relaxed">
+                    Setiap detik bersamamu terasa begitu berharga. Kamu bukan hanya bagian dari hidupku, tapi kamu adalah keindahan yang Tuhan kirimkan untuk melengkapi hariku.
+                </p>
+
+                <p class="font-tegas font-bold text-emas text-[1.5rem] bayangan-teks garis-teks">
+                    Aku sungguh mencintaimu...
+                </p>
+
+                <p class="font-tegas font-semibold text-white text-[1.6rem] bayangan-teks mt-2">
+                    MAUKAH KAMU MENJADI PENDAMPING HIDUPKU SELAMANYA?
+                </p>
+            </div>
+
+            <!-- 🟢 TOMBOL PILIHAN: KEDUANYA GOYANG TERUS 🟢 -->
+            <div class="flex flex-col gap-5 items-center">
+                <!-- Tombol Mau -->
+                <a href="https://wa.me/6285709586627?text=Iya%20aku%20mau!%20%E2%9D%A4%EF%B8%8F%F0%9F%8C%B9%20Aku%20juga%20mencintaimu%20dengan%20sepenuh%20hati!" 
+                   id="tombolMau"
+                   class="animasi-goyang-cepat group relative overflow-hidden w-full max-w-[220px] text-center tombol-tekan bg-gradient-to-r from-emas via-biru to-mawar border-[3px] border-white text-white font-tegas font-semibold px-8 py-4 rounded-full text-xl shadow-berkilau hover:shadow-romantis">
+                    <span class="relative z-10">DENGAN SENANG HATI! 🥰</span>
+                </a>
+
+                <!-- Tombol Tidak -->
+                <button id="tombolTidak" 
+                        class="animasi-goyang-cepat tombol-tekan w-full max-w-[200px] bg-gradient-to-r from-abu/80 to-gelap/80 border-[3px] border-white/30 text-white font-utama font-medium px-8 py-3.5 rounded-full text-lg"
+                        style="animation-delay: 0.5s;">
+                    Belum Bisa 😔
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ✅ KATA-KATA PAS TOMBOL DITEKAN ✅ -->
+    <!-- Halaman Jika MAU -->
+    <div id="halamanMau" class="fixed inset-0 z-50 bg-gradient-to-br from-emas via-biru to-mawar backdrop-blur-md flex items-center justify-center p-4 hidden">
+        <div class="text-center bg-white/20 backdrop-blur-lg p-10 rounded-[3rem] border-4 border-white/50 shadow-romantis animasi-denyut">
+            <div class="text-8xl mb-6">🌹💍✨</div>
+            <h2 class="font-tegas font-bold text-4xl text-white mb-4 bayangan-teks">TERIMA KASIH, SAYANG!</h2>
+            <p class="font-utama text-white text-[1.2rem] max-w-sm mx-auto leading-relaxed font-semibold">
+                "Kebahagiaan ini tak terlukiskan kata.<br>
+                Kamu adalah jawaban dari setiap doaku.<br>
+                Aku janji akan selalu menjagamu,<br>
+                Dan mencintaimu sampai akhir waktu."
+            </p>
+            <p class="font-utama text-white/90 mt-4 font-medium">Cek pesan cintaku di WhatsApp ya... ❤️</p>
+        </div>
+    </div>
+
+    <!-- Halaman Jika TIDAK -->
+    <div id="halamanTidak" class="fixed inset-0 z-50 bg-gradient-to-br from-gelap/90 to-black/90 backdrop-blur-md flex items-center justify-center p-4 hidden">
+        <div class="text-center bg-white/10 backdrop-blur-lg p-10 rounded-[3rem] border-4 border-emas/30">
+            <div class="text-8xl mb-6">💔🥀🌑</div>
+            <h2 class="font-tegas font-bold text-3xl text-emas mb-3">TAK APA-APA, AKU MENGERTI...</h2>
+            <p class="font-utama text-white/80 text-base max-w-sm mx-auto leading-relaxed font-medium">
+                Meski hatiku terasa berat dan sedih, aku tetap bersyukur pernah mengenalmu. Kamu tetap orang paling istimewa yang pernah hadir dalam hidupku. Aku akan tetap ada di sini, mendoakan kebahagiaanmu, walau hanya dari jauh. Tetaplah tersenyum dan bahagia selalu...
+            </p>
+        </div>
+    </div>
+
+    <!-- 🔊 MUSIK ROMANTIS -->
+    <audio id="musik" loop>
+        <source src="https://cdn.freesound.org/previews/144/144571_2117624-lq.mp3" type="audio/mpeg">
+    
+
+    <script>
+        const musik = document.getElementById('musik');
+        musik.volume = 0.4;
+        document.addEventListener('DOMContentLoaded', () => { musik.play().catch(() => document.addEventListener('click', () => musik.play(), {once:true})); });
+
+        const tombolMau = document.getElementById('tombolMau');
+        const tombolTidak = document.getElementById('tombolTidak');
+        const kartuUtama = document.getElementById('kartuUtama');
+        const halamanMau = document.getElementById('halamanMau');
+        const halamanTidak = document.getElementById('halamanTidak');
+
+        // Aksi Tombol MAU
+        tombolMau.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Efek hujan hati & bunga
+            for(let i=0; i<40; i++){
+                let simbol = document.createElement('div');
+                const isi = '❤️✨🌹🥰💍📜';
+                simbol.innerHTML = isi[Math.floor(Math.random() * isi.length)];
+                simbol.style.cssText = `position:fixed; left:${Math.random()*100}vw; top:-10px; font-size:${Math.random()*25+15}px; animation:jatuh 2.5s ease-out forwards; z-index:100;`;
+                document.body.appendChild(simbol);
+                setTimeout(() => simbol.remove(), 2500);
+            }
+
+            kartuUtama.classList.add('opacity-0', 'scale-75', 'transition-all', 'duration-700');
+            setTimeout(() => { 
+                kartuUtama.classList.add('hidden'); 
+                halamanMau.classList.remove('hidden'); 
+                halamanMau.classList.add('animasi-muncul'); 
+                // Buka WA otomatis setelah pesan muncul
+                setTimeout(() => { window.location.href = tombolMau.getAttribute('href'); }, 2500);
+            }, 800);
+        });
+
+        // Aksi Tombol TIDAK
+        tombolTidak.addEventListener('click', () => {
+            kartuUtama.classList.add('opacity-0', 'scale-75', 'transition-all', 'duration-700');
+            setTimeout(() => { 
+                kartuUtama.classList.add('hidden'); 
+                halamanTidak.classList.remove('hidden'); 
+                halamanTidak.classList.add('animasi-muncul'); 
+            }, 500);
+        });
+    </script>
+</body>
+</html>
+
